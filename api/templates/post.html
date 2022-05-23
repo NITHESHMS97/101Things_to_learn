@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bootstrap style ------>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- stylesheet ---------->
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/style.css')}}">
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="{{url_for('static',filename = 'images/icon.png')}}">
+</head>
+<body class="0">
+        <!--Navbar-->
+        <nav class="navbar navbar-light bg-faded justify-content-between flex-nowrap flex-row  bg-dark">
+            <div class="nav navbar-nav flex-row float-right">
+                <a class="navbar-brand text-white" href="/">Blog</a>
+                <a class="navbar-brand text-white" href="/home">home</a>
+                <a class="navbar-brand text-white" href="/admin">Admin</a>
+                <a class= "float-right btn btn-primary" href="/create" role="button">Create</a>
+            </div>
+        </nav>
+        <h1>Hello</h1>
+        <div class="blog">
+            <div class="date">{{post.date_created}}</div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Blog{% endblock  %}
+{% block stylesheet %}
+<link rel="stylesheet" href="{{url_for('static',filename = 'css/style.css')}}">
+{% endblock stylesheet %}
+{% block content %}
+    <!-- #Blog section -->
+    <section id="blog">
+        <!--heading-->
+        <div class="blog-heading">
+            <h3>My Blog</h3>
+            <span>My Recent Posts </span>
+        </div>
+
+        <!--blog-container------->
+        <div class="blog-container">
+            
+            <!-- #box1 -->
+            {% for post in data %}
+            <div class="blog-box">
+                <div class="blog-img">
+                    <img src="{{url_for('static',filename = 'images/default.jpg')}}" alt="Blog">
+                </div>
+                <div class="blog-text">
+                    <span>{{ post.date_created }}</span>
+                    <a href="/post/{{ post.title }}" class="blog-title">{{ post.title }}</a>
+                    <a href="/post/{{ post.title }}">Read More</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock  %}
